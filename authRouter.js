@@ -38,7 +38,7 @@ router.post('/login', async (req, res) => {
         // Si las credenciales son correctas, establece la sesión del usuario
         req.session.user = {
             email: user.email,
-            role: user.role // Si tienes un campo de 'role' en tu modelo de usuario
+            role: user.role 
         };
 
         res.redirect('/home'); // Redirige a la página principal
@@ -115,7 +115,7 @@ router.get('/auth/github/callback',
 
 router.get(
     "/github",
-    passport.authenticate("github", { scope: ["user:email"] }) // Aquí añade el scope adecuado
+    passport.authenticate("github", { scope: ["user:email"] })
   );
   
   router.get("/github/callback",
